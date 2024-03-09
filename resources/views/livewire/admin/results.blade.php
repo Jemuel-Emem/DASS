@@ -6,7 +6,7 @@
             <thead class="text-xs text-black uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                        #
+                        Name
                      </th>
                     <th scope="col" class="px-6 py-3">
                    Stress
@@ -35,14 +35,14 @@
             <tbody class="text-black">
                    @forelse($surv as $q)
                 <tr class="border">
-                    <td class="px-6 py-4">{{ $q->userid }}</td>
+                    <td class="px-6 py-4">{{ $q->name }}</td>
                     <td class="px-6 py-4">{{ $q->stress }}</td>
                     <td class="px-6 py-4">{{ $q->anxiety }}</td>
                     <td class="px-6 py-4">{{ $q->depression }}</td>
                     <td class="px-6 py-4">{{ $q->result }}</td>
                     <td class="px-6 py-4">{{ $q->interpretation }}</td>
                    <td class="px-6 py-4 flex gap-2 mt-4 justify-center">
-                        <x-button class="w-22 h-6 " label="interpret" icon="pencil-alt"  wire:click="edit({{ $q->id }})" positive />
+                        <x-button class="w-22 h-6 " label="interpret" icon="pencil-alt"  wire:click="editt({{ $q->id }})" positive />
                     </td>
 
                 </tr>

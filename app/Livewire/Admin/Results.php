@@ -21,6 +21,7 @@ class Results extends Component
     }
 
     public function edit($id){
+
         $data = res::where('id', $id)->first();
 
         if ($data){
@@ -30,7 +31,7 @@ class Results extends Component
         }
            }
 
-           public function submitedit(){
+    public function submitedit(){
             $data = res::where('id', $this->editid)->first();
 
             $data->update([
@@ -47,5 +48,7 @@ class Results extends Component
 
 
         }
+
+
 
 }

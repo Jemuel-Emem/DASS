@@ -1,5 +1,5 @@
 <div class="w-8/12 p-12">
-    <label for="" class="text-cyan-500 text-2xl font-black">INTERPRETATION RESULT</label>
+    <label for="" class="text-cyan-500 text-2xl font-black">RECOMMENDATION RESULT</label>
 
     @foreach ($interpretation as $inter)
     <div class="bg-white shadow-md rounded-lg p-8 mt-4">

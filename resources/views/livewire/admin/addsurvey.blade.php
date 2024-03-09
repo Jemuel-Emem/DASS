@@ -1,6 +1,6 @@
 <div>
 
-    <x-button label="Add Instructions" dark icon="plus" wire:click="$set('add_modal', true)" />
+    <x-button label="Add Survey Questions" dark icon="plus" wire:click="$set('add_modal', true)" />
 
     <div class="relative overflow-x-auto mt-4">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -51,6 +51,8 @@
 
 
 
+
+
     <x-modal wire:model.defer="add_modal">
         <x-card title="Add Questionaire">
             <div class="space-y-3">
@@ -71,11 +73,10 @@
 
 
     <x-modal wire:model.defer="edit_modal">
-        <x-card title="Add Instructions">
+        <x-card title="Update Survey Questions">
             <div class="space-y-3">
-                <x-input label="What level is this? " placeholder="" wire:model="levels" />
-                <x-textarea label="Mechanics" placeholder="" wire:model="mechanics" />
-                <x-textarea label="Tutorial Facility" placeholder="" wire:model="tutorial" />
+                <x-input label="Code" placeholder="" wire:model="code" />
+                <x-textarea label="Question" placeholder="" wire:model="questions" />
 
 
             </div>

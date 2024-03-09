@@ -59,6 +59,7 @@ class Result extends Component
 
         Res::create([
             'userid' => Auth::id(),
+            'name' => Auth::user()->name,
             'stress' => $this->collectedValues['S'] ?? 0,
             'anxiety' => $this->collectedValues['A'] ?? 0,
             'depression' => $this->collectedValues['D'] ?? 0,

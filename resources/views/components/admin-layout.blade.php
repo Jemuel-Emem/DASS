@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>DASS</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -55,7 +55,7 @@
         aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-cyan-500 ">
             <ul class="space-y-2 font-medium ">
-                <a href="ds">
+                <a href="{{ route('Admindashboard') }}">
                     <div class="flex  flex-col items-center h-full px-3  overflow-y-auto bg-cyan-700 rounded-lg">
                         <div class="">
                          <img src="{{ asset('images/finallogo.png') }}" alt="Violation Photo" class="w-16 h-16">
@@ -95,7 +95,10 @@
         </div>
     </aside>
 
-    <div class="flex justify-end text-black p-10">
+    <div class="flex justify-between text-black p-10">
+        <div class="ml-72">
+            <img src="{{ asset('images/sksu1.png') }}" alt="" class="h-32 w-32">
+        </div>
         <div>
            <span class="text-green-600 font-bold"> {{ Auth::user()->name }}</span>
           <x-dropdown>

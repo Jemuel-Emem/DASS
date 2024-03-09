@@ -11,7 +11,8 @@ class Addsurvey extends Component
     use Actions;
     use  WithPagination;
     public $add_modal = false;
-     public $search, $questions, $code;
+    public $edit_modal = false;
+     public $search, $questions, $code, $editid;
      public $collectedValues = [];
      public $result = [];
     public function render()
@@ -46,4 +47,35 @@ class Addsurvey extends Component
             'questions',
         ]);
     }
+
+    public function edit($id){
+
+        $data = survey::where('id', $id)->first();
+
+        if ($data){
+           $this->questions = $data->questions;
+           $this->code = $data->code;
+           $this->editid = $data->id;
+           $this->edit_modal = true;
+        }
+           }
+
+    public function submitedit(){
+            $data = survey::where('id', $this->editid)->first();
+
+            $data->update([
+                'questions' => $this->questions,
+                'code' => $this->code,
+
+            ]);
+
+            $this->notification()->success(
+                $title = 'The survey has been updated',
+                $description = 'survey question updated successfully'
+            );
+
+            $this->edit_modal = false;
+
+
+        }
 }
