@@ -21,7 +21,7 @@ class Takesurvey extends Component
     public function render()
     {
         $search = '%' . $this->search . '%';
-        $surveys = Survey::where('questions', 'like', $search)->paginate(21);
+        $surveys = Survey::where('questions', 'like', $search)->paginate(5);
 
         return view('livewire.user.takesurvey', [
             'surv' => $surveys,

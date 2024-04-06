@@ -8,16 +8,63 @@
         <div class="flex justify-between mt-2">
             <div class="flex flex-col">
                 <span class="text-gray-800 font-bold">Stress:</span>
-                <span class="text-gray-600">{{ $inter->stress }}</span>
+                @php
+                    $stress = $inter->stress;
+                    $severity = '';
+                    if ($stress >= 0 && $stress <= 14) {
+                        $severity = 'Normal';
+                    } elseif ($stress >= 15 && $stress <= 18) {
+                        $severity = 'Mild';
+                    } elseif ($stress >= 19 && $stress <= 25) {
+                        $severity = 'Moderate';
+                    } elseif ($stress >= 26 && $stress <= 33) {
+                        $severity = 'Severe';
+                    } elseif ($stress >= 34) {
+                        $severity = 'Extremely Severe';
+                    }
+                @endphp
+                <span class="text-gray-600">{{ $severity }}</span>
             </div>
+
             <div class="flex flex-col">
                 <span class="text-gray-800 font-bold">Anxiety:</span>
-                <span class="text-gray-600">{{ $inter->anxiety }}</span>
+                @php
+                    $anxiety = $inter->anxiety;
+                    $severity = '';
+                    if ($anxiety >= 0 && $anxiety <= 7) {
+                        $severity = 'Normal';
+                    } elseif ($anxiety >= 8 && $anxiety <= 9) {
+                        $severity = 'Mild';
+                    } elseif ($anxiety >= 10 && $anxiety <= 14) {
+                        $severity = 'Moderate';
+                    } elseif ($anxiety >= 15 && $anxiety <= 19) {
+                        $severity = 'Severe';
+                    } elseif ($anxiety >= 20) {
+                        $severity = 'Extremely Severe';
+                    }
+                @endphp
+                <span class="text-gray-600">{{ $severity }}</span>
             </div>
             <div class="flex flex-col">
                 <span class="text-gray-800 font-bold">Depression:</span>
-                <span class="text-gray-600">{{ $inter->depression }}</span>
+                @php
+                    $depression = $inter->depression;
+                    $severity = '';
+                    if ($depression >= 0 && $depression <= 7) {
+                        $severity = 'Normal';
+                    } elseif ($depression >= 8 && $depression <= 9) {
+                        $severity = 'Mild';
+                    } elseif ($depression >= 10 && $depression <= 14) {
+                        $severity = 'Moderate';
+                    } elseif ($depression >= 15 && $depression <= 19) {
+                        $severity = 'Severe';
+                    } elseif ($depression >= 20) {
+                        $severity = 'Extremely Severe';
+                    }
+                @endphp
+                <span class="text-gray-600">{{ $severity }}</span>
             </div>
+
 
 
         </div>

@@ -1,11 +1,11 @@
 <div class="mt-10  flex">
     <x-card class="bg-white text-black rounded-lg" >
-      <div class="text-gray-500">
-        Please read each statement and select a number, 0, 1, 2, or 3 which indicates how the statement applied to you over the past week. There are no right or wrong answers. Do not spend too much time on any statement.
+      <div class="text-gray-500 ">
+       <h1 class="font-bold text-xl"> Please read each statement and select a number, 0, 1, 2, or 3 which indicates how the statement applied to you over the past week. There are no right or wrong answers. Do not spend too much time on any statement.</h1>
 
         <div class="flex flex-col">
-            <span>The rating scale is as follows</span>
-            <ul>
+            <span class="font-sans">The rating scale is as follows</span>
+            <ul class="font-sans text-xl">
                 <li>0 Did not apply to all</li>
                 <li>1 Applied to me to some degree, or some of the time </li>
                 <li>2 Applied to me to a considerable degree or a good part of time</li>
@@ -14,7 +14,7 @@
             </ul>
 
           </div>
-          <span class="text-red-500">* Take note - All fields must be fillup before proceeding </span>
+          <span class="text-red-500 font-bold">* Take note - All fields must be fill out before proceeding </span>
           @error('model.*')
           <div class="text-red-500">{{ $message }}</div>
       @enderror
@@ -24,8 +24,8 @@
         <hr class="mt-2">
         @forelse($surv as $q)
             <div class="flex justify-between items-center mt-4 ">
-                <div class="flex items-center">
-                    <span class="font-bold mr-2">{{ $q->id }}.</span>
+                <div class="flex items-center text-lg ">
+                    <span class=" mr-2">{{ $q->id }}.</span>
                     <span class="mr-2">({{ $q->code }})</span>
                     <span>{{ $q->questions }}</span>
                 </div>
@@ -56,6 +56,10 @@
                     @endforeach
                 </ul>
             @endif
+        </div>
+
+        <div class="mt-4">
+            {{ $surv->links() }}
         </div>
 
         <div class="text-center mt-10">

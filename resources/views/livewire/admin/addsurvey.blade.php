@@ -56,7 +56,12 @@
     <x-modal wire:model.defer="add_modal">
         <x-card title="Add Questionaire">
             <div class="space-y-3">
-                <x-input label="Code" placeholder="" wire:model="code" />
+                <x-native-select label="Select Code" wire:model="code">
+                    <option>D</option>
+                    <option>A</option>
+                    <option>S</option>
+
+                </x-native-select>
                 <x-textarea label="Question" placeholder="" wire:model="questions" />
 
 
@@ -75,7 +80,12 @@
     <x-modal wire:model.defer="edit_modal">
         <x-card title="Update Survey Questions">
             <div class="space-y-3">
-                <x-input label="Code" placeholder="" wire:model="code" />
+                <x-native-select label="Select Status" wire:model="code">
+                    <option>D</option>
+                    <option>A</option>
+                    <option>S</option>
+
+                </x-native-select>
                 <x-textarea label="Question" placeholder="" wire:model="questions" />
 
 
